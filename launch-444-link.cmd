@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-cd /d "%~dp0\444_link_flutter"
+cd /d "%~dp0\link_444_flutter"
 
 if not exist "pubspec.yaml" (
   echo [444-Link Flutter] pubspec.yaml not found in %cd%

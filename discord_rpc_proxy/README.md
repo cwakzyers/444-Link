@@ -43,7 +43,7 @@ build-proxy.cmd
 That outputs:
 
 - `discord_rpc_proxy/build/discord-rpc.dll`
-- `444_link_flutter/assets/dlls/discord-rpc.dll` (copied automatically)
+- `link_444_flutter/assets/dlls/discord-rpc.dll` (copied automatically)
 
 ## Runtime Behavior In 444
 

@@ -15,7 +15,7 @@ function Write-Step {
 function Stop-444LinkProcesses {
   $names = @(
     '444 Link',
-    '444_link_flutter'
+    'link_444_flutter'
   )
 
   foreach ($name in $names) {
@@ -184,7 +184,7 @@ function Get-ReleaseExecutableName {
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $repoRoot = Resolve-Path (Join-Path $scriptDir "..")
-$flutterDir = Join-Path $repoRoot "444_link_flutter"
+$flutterDir = Join-Path $repoRoot "link_444_flutter"
 $pubspecPath = Join-Path $flutterDir "pubspec.yaml"
 $releaseDir = Join-Path $flutterDir "build\windows\x64\runner\Release"
 $installerScript = Join-Path $scriptDir "444-Link.iss"
@@ -216,7 +216,7 @@ if (-not $SkipFlutterBuild) {
     # remove common locked outputs before cleaning.
     Stop-444LinkProcesses
     $releaseOutputDir = Join-Path $flutterDir 'build\windows\x64\runner\Release'
-    Remove-FileWithRetry -Path (Join-Path $releaseOutputDir '444_link_flutter.exe')
+    Remove-FileWithRetry -Path (Join-Path $releaseOutputDir 'link_444_flutter.exe')
     Remove-FileWithRetry -Path (Join-Path $releaseOutputDir '444 Link.exe')
 
     Push-Location $flutterDir
@@ -270,13 +270,13 @@ Write-Step "Found executable: $executableName"
 
 # Keep end-user naming consistent in the installed folder.
 #
-# Note: Flutter build output is typically <pubspec name>.exe (444_link_flutter.exe).
+# Note: Flutter build output is typically <pubspec name>.exe (link_444_flutter.exe).
 # If we previously renamed it to "444 Link.exe" and then built again, both files can
 # exist and the renamed one may be stale. Prefer renaming the fresh Flutter output
 # when present so the installer always packages the latest build.
 $desiredExecutableName = "444 Link.exe"
 $desiredExecutablePath = Join-Path $releaseDir $desiredExecutableName
-$flutterOutputExecutablePath = Join-Path $releaseDir "444_link_flutter.exe"
+$flutterOutputExecutablePath = Join-Path $releaseDir "link_444_flutter.exe"
 
 if (Test-Path $flutterOutputExecutablePath) {
   if (Test-Path $desiredExecutablePath) {

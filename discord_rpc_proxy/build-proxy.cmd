@@ -6,8 +6,8 @@ set "BUILD_DIR=%SCRIPT_DIR%build"
 set "SOURCE_FILE=%SCRIPT_DIR%discord_rpc_proxy.cpp"
 set "DEF_FILE=%SCRIPT_DIR%discord-rpc.def"
 set "OUTPUT_DLL=%BUILD_DIR%\discord-rpc.dll"
-set "ASSET_DLL=%SCRIPT_DIR%..\444_link_flutter\assets\dlls\discord-rpc.dll"
-set "VERSION_SOURCE=%SCRIPT_DIR%..\444_link_flutter\lib\main.dart"
+set "ASSET_DLL=%SCRIPT_DIR%..\link_444_flutter\assets\dlls\discord-rpc.dll"
+set "VERSION_SOURCE=%SCRIPT_DIR%..\link_444_flutter\lib\main.dart"
 set "LAUNCHER_VERSION=unknown"
 
 for /f "tokens=2 delims='" %%I in ('findstr /R /C:"_launcherVersion = '.*'" "%VERSION_SOURCE%"') do set "LAUNCHER_VERSION=%%I"
@@ -28,8 +28,8 @@ if errorlevel 1 (
   exit /b 1
 )
 
-if not exist "%SCRIPT_DIR%..\444_link_flutter\assets\dlls" (
-  mkdir "%SCRIPT_DIR%..\444_link_flutter\assets\dlls"
+if not exist "%SCRIPT_DIR%..\link_444_flutter\assets\dlls" (
+  mkdir "%SCRIPT_DIR%..\link_444_flutter\assets\dlls"
 )
 copy /Y "%OUTPUT_DLL%" "%ASSET_DLL%" >nul
 

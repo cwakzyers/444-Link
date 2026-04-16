@@ -54,7 +54,7 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 UninstallDisplayIcon={app}\{#ExecutableName}
 CloseApplications=yes
-CloseApplicationsFilter={#ExecutableName},444_link_flutter.exe
+CloseApplicationsFilter={#ExecutableName},link_444_flutter.exe
 RestartApplications=no
 DisableReadyMemo=yes
 #if SetupIconFile != ""
@@ -309,7 +309,7 @@ begin
   if CurUninstallStep = usUninstall then begin
     _TaskKillImage('{#ExecutableName}');
     // Older builds used this name; close it too so uninstall/deletion works.
-    if CompareText('{#ExecutableName}', '444_link_flutter.exe') <> 0 then
-      _TaskKillImage('444_link_flutter.exe');
+    if CompareText('{#ExecutableName}', 'link_444_flutter.exe') <> 0 then
+      _TaskKillImage('link_444_flutter.exe');
   end;
 end;

@@ -1,0 +1,36 @@
+# OS / filesystem
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+
+# Local/reference folders
+.refs/
+.tmp_444_backend/
+node_modules/
+
+# Logs / temp
+*.log
+*.tmp
+*.cache
+
+# Build outputs
+dist/
+coverage/
+
+# Flutter desktop project outputs
+444_link_flutter/.dart_tool/
+444_link_flutter/.flutter-plugins-dependencies
+444_link_flutter/.pub/
+444_link_flutter/.pub-cache/
+444_link_flutter/build/
+444_link_flutter/windows/flutter/ephemeral/
+444_link_flutter/windows/flutter/generated_plugin_registrant.cc
+444_link_flutter/windows/flutter/generated_plugin_registrant.h
+444_link_flutter/windows/flutter/generated_plugins.cmake
